@@ -1,0 +1,11 @@
+In order to use elements of one page (i.e header stylesheets nav bars footers and anything else) on another
+put {%extends 'index.html'%} for example
+
+In order to make different elements customisable you can use block tags
+e.g {%block title%} Page Tite {%endblock%}
+if this was in index.html and you created another template which extended this page then you can customsie the 
+content by putting {%block title%} Other Title {%endblock%} for example
+if you DONT want certain elements appearing by default then put them inside something like a content block 
+this wont show up when page is 'extended' 
+(eg if only wanted nav bar from main page to be 'extended' onto others put everything else in a content block 
+and then put all content in 'extended' pages into content blocks of their own - this will 'override' original cotnent)

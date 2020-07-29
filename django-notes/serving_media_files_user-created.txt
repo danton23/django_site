@@ -1,0 +1,29 @@
+Unless you are providing 'hard-coded' static paths to media files like images you need to set Django up so it knows where to store and find image 
+files and the like which are created dynamically by users/admin (through creation of 'objects')
+
+In order to get this working you first need to add these lines to the settings.py file for your project:
+
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+Then, lower down, add these lines:
+  
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+
+(Also if you are having problems with serving static files - which should be got up and running BEFORE these steps - then check you also have 
+something like the following lines somewhere in the file):
+
+   STATIC_URL = '/static/'
+   STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),)
+
+   STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') 
+
+Finally, in order to let your models know where to store media when it is created you should add something like this to the models.py file for 
+the model in question for fields which will enable the user to upload images etc:
+
+   image= models.ImageField(null=True,blank=True, upload_to="images/")
+
+   
+The last line gives the path to a subfolder - which will be created inside the media folder already defined in settings.py - where the newly
+added image (or other media - I think!) can be stored.    

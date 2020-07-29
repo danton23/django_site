@@ -1,0 +1,21 @@
+To Serve Static Files on developement Server - first make sure the 'app' (i.e Polls Posts etc) is listed in installed apps 
+then create a static folder inside the main folder of the app inside THIS create a file with the name of app eg if app is called Customers stucture
+will equal Customers/static/Customer then put static files inside of this 
+
+In settings.py make sure these lines are there
+ 
+
+
+ STATICFILES_DIRS = (
+     os.path.join(BASE_DIR, "static"),
+  )
+
+  STATIC_URL = '/static/'
+
+then in the header (or at top somewhere) put this line:
+
+{% load static %}
+
+whenever you want to load a static file now (provided you have put in in directory my_app/static/my_app) 
+simply put e.g <img src="{%static 'my_app/css/styles.css'%}"> (note here we only put the part of the path AFTER static folder located in the app)
+should then load (P.S the SINGLE QUOTES in line of code above seem to be important)
