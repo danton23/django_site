@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,">
+    {%block title%}
+	<title> Insert Site Title Here </title>
+    {%endblock%}
+	<link href="css/jquery.bxslider.css" rel="stylesheet" />
+    {% load static %}
+	<link href="{%static 'posts/css/style.css' %}" rel="stylesheet">
+   
+	<script src="js/j-query-3.5.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+</head>
+ <body>
+ 	<div id ='banner'>
+    <a href="#"> Home </a>
+    
+    <image src="{%static 'posts/imgs/pics/border3.jpg'%}"></image>
+    
+ 	</div>
+	<div id='wrapper'> <!--- Wrapper Start --->
+        {%block content%}
+	<div id="main-content">
+		<div class="blog-post">
+	   <h1> Main Post 1 </h1>
+	    <img src="{%static 'posts/imgs/pics/think.jpg'%}">
+        <p>Text for Blog Post One</p>
+        </div>
+        <div class="blog-post">
+        <h1> Main Post 2 </h1>
+        <img src="{%static 'posts/imgs/pics/reading.jpg'%}">
+        <p> Text for Blog Post Two </p>
+        </div>
+        <div class="blog-post">
+        <h1> Main Post 2 </h1>
+        <img src="{%static 'posts/imgs/pics/gloves.jpg'%}">
+        <p> Text for Blog Post Three </p>
+        <a href="/posts/test/"> Next Page </a>
+        </div>
+    
+    </div>
+    <div id="side-bar">
+     <h1>Post 1</h1>
+     <p> Some text....</p>
+     <h1> Post 2 </h1>
+     <p> More Text.... </p>
+
+    </div>
+	</div> <!--- Wrapper Ends --->
+    {%endblock%}
+	<footer>
+		<p> @ Charlie Jarman 2020 </p>
+	</footer>
+</body>

@@ -1,0 +1,16 @@
+{% extends 'posts/index.html' %}
+{%block title%}
+<title> Test Page </title>
+{%endblock%}
+{%block content%}
+{{limit}}
+{% for post in allposts|slice:":1" %}
+<h1 style="margin-top:30px">{{post.post_title}}</h1>
+{%if post.image%}
+<img src={{post.image.url}}>
+{%endif%}
+{{post.image}}
+
+{%endfor%}
+asfasfpasfpasfaspfas
+{%endblock%}

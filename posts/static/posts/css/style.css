@@ -1,0 +1,98 @@
+*{      margin: 0; 
+    	padding: 0; 
+
+}/* need this otherwise some elements dont fill width of screen even when explicity told too */
+
+body{
+	background:#F1F6F8; /* not QUITE whit */
+	font-family:'Rockwell';
+	margin: 0 ;
+	overflow-x: hidden;
+	padding:0;
+   
+}
+#banner{
+	width:100%;
+	text-align:center;
+	height:5%;
+	margin-bottom:50px;
+	display:none; /* CHANGE THIS AM DEBUGGING! */
+}
+#banner a{
+    float:left;
+    margin-left:20px;
+}
+#banner img{
+	text-align: center;
+	width:60%;
+	height:300px;
+	display:none;
+}
+#banner img:hover{
+	display:none;
+}
+p{
+	font-family: Courier Bold, serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+	color:red;
+    
+}
+#wrapper{
+
+	max-width: 1200px;
+	margin: 0 auto; /* this will center everything inside wrapper on the page */
+    margin-bottom:100px;
+}
+#main-content{
+  width:70%;
+  float:left;
+  padding-left:20px;
+  padding-right:20px;
+ }
+ .blog-post{
+ 	width:100%;
+ 	margin-bottom:20px;
+ }
+ #main-content h1{
+ 	margin-bottom:20px;
+
+ }
+ #main-content h1:hover{
+ 	color:blue;
+ }
+ #main-content p{
+ 	margin-bottom:300px;
+ 	
+ }
+ #main-content img{
+ 	float:left;
+ 	margin-right:20px;
+ 	border-radius: 25%;
+ 	width:274px;
+ 	height:183px;
+ }
+ #side-bar{
+
+ 	width:20%;
+ 	float:right;
+
+ }
+ #side-bar h1{
+ margin-bottom:20px;	
+
+ }
+ #side-bar p{
+ 	margin-bottom:40px;
+ }
+footer{
+	text-align:center;
+	position:fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+
+}
+footer p{
+
+	font-size: 15px
+
+}
