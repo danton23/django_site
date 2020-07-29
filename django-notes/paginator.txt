@@ -1,0 +1,43 @@
+A very useful tool - which automatically 'paginates' objects such as posts, dividing them into defined number per page - is the Paginator
+
+To use this add the following code to the top of your views.py for the particular 'app' (i.e posts, or maybe gallery):
+    
+    from django.core.paginator import Paginator
+
+then inside the particular view do something like the following:
+  def test(request):
+    allposts=Post.objects.all()
+    paginator=Paginator(allposts,2)    #2nd value is number of objects per page
+    page_number=request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, "posts/test.html",{"page_obj":page_obj})
+
+In order to access the objects inside the template you can now use the page_obj which contains a list of them, e.g :
+
+  % for post in page_obj %}
+  <h1 style="margin-top:30px">{{post.post_title}}</h1>
+  {%if post.image%}
+  <img src={{post.image.url}}>
+  {%endif%}
+
+Another useful feature is the ability to easily add 'next' 'previous' and 'first' 'last' buttons to page like so:
+
+  <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+   </div>
+
+Obviously this can be modified and styled as you please.
