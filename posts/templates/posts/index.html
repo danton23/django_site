@@ -14,10 +14,11 @@
    
 	<script src="js/j-query-3.5.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
+    {% block extrahead %}{% endblock %}
 </head>
  <body>
  	<div id ='banner'>
-    <a href="#"> Home </a>
+    <a href="/posts"> Home </a>
     
     <image src="{%static 'posts/imgs/pics/border3.jpg'%}"></image>
     

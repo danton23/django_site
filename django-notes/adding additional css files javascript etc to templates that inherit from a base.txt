@@ -1,0 +1,18 @@
+If you want to add things like additional stylesheets simply create a block INSIDE the header portion of the template which your page
+
+inherits from. E.G if a page 'extends' base.html then put this code INSIDE the header portion:
+
+   {% block extrahead %}{% endblock %}
+   </head> (this is where header ends)
+
+Then in the template you are using simply put:
+
+   {%load static}
+
+after the 'extends' statement and then add something like this near top:
+
+    {% block extrahead %}
+    <link href="{%static 'posts/css/style2.css' %}" rel="stylesheet" %}>}
+    {% endblock %}
+
+The new css files should ALSO now be loaded.

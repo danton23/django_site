@@ -1,13 +1,42 @@
 {%extends 'posts/index.html'%}
+{% load static %}
 {%block title%}
 {{use_post.post_title}}
 {%endblock%}
+ {% block extrahead %}
+ <link href="{%static 'posts/css/style2.css' %}" rel="stylesheet" %}>
+}
+{% endblock %}
 {%block content%}
-<p> {{use_post.post_text}} </p>
+
+
+
 {% if use_post.image %}
-<img src="{{use_post.image.url}}">
+<div id ="main_cont">
+<div id="post_title">
+<img src="{{use_post.image.url}}" id="main_img">
+
 {%else%}
 <p> no image found </p>
 
 {%endif%}
+<h1 id="headline"> {{use_post.post_title}}</h1>
+<br>
+<br>
+<br>
+<p id="cont"> {{use_post.post_text}} </p>
+
+</div>
+<div id="right-content">
+<h1> Post </h1>
+<p> astlatastlastlast </p>
+<p> aslfaslasflasflasflasflasf</p>
+<p> Last Para </p>
+<h2> Other Post </h2>
+</div>
+</div>
+
+
+
+
 {%endblock%}

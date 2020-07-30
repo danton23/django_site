@@ -1,0 +1,14 @@
+In order to make sure that text appears NEXT to image first put them both inside the same DIV (if you have problems with content overflowing
+
+EITHER adjust dimensions of div OR set overflow:hidden (this will truncate content, though, if it is too big).
+
+Next set the image to float:right or float:left (or margin: 0 auto etc to put in center of page) 
+
+Then add this property to the text elem (inside the same div as the image) which you want to appear NEXT to it:
+       
+    display:block;
+ 
+Finally you can justify the text to make it look better by adding this property:
+
+    text-align:justify;
+    
