@@ -1,0 +1,43 @@
+In order to be able to use strings in urls/views we need to change how we set up the urls.py file for a particular app.
+
+In order to accept a string into the url (which can be passed, using Jinja logic via the html - e.g when we click on a post
+
+image a link is dynamically generated to a dynamically generated page displaying all of that posts content etc) we need to 
+
+define it like so: 
+
+     path("<str:usename>",views.post,name="post"),
+
+this will accept a string and store it in the variable 'usename'.
+
+(Note: if you have trouble here check you are using the correct variable (str and int are two possible ones so check the user docs
+
+for other possibilities - for strings including things like underscores I think the 'slug' variable is supposed to be used).
+
+then in views.py we can something like the following to relate this to an object:
+
+    def post(request, usename):
+       use_post=Post.objects.get(post_title=usename)
+       return render(request, "posts/post.html",{"use_post":use_post})
+
+Here we 'accept' the usename variable given via the url and then use this to get a Post object whose title is the same as the use_name string
+
+passed into the browser. We then generate some html from a template which has access to the use_post data (this will contain all the Posts 
+
+variables)
+
+Inside the template we can now do something like this: 
+
+      {%extends 'posts/index.html'%}
+      {%block title%}
+      {{use_post.post_title}}
+      {%endblock%}
+      {%block content%}
+      <p> {{use_post.post_text}} </p>
+      {% if use_post.image %}
+         <img src="{{use_post.image.url}}">
+      {%else%}
+        <p> no image found </p>
+
+      {%endif%}
+      {%endblock%}

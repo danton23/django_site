@@ -1,0 +1,13 @@
+{%extends 'posts/index.html'%}
+{%block title%}
+{{use_post.post_title}}
+{%endblock%}
+{%block content%}
+<p> {{use_post.post_text}} </p>
+{% if use_post.image %}
+<img src="{{use_post.image.url}}">
+{%else%}
+<p> no image found </p>
+
+{%endif%}
+{%endblock%}
