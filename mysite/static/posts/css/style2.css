@@ -46,9 +46,6 @@
 	list-style-type: none;
 }
 
-.social li{
-	margin-bottom:300px;
-}
 i {
     color:blue;
     content: '\f35a'; /* replace / with \ */
@@ -56,6 +53,5 @@ i {
     font-style: normal;
     
     text-decoration: inherit;
-    margin-right:100px;
 }
-.fa { font-family: 'FontAwesome' !important; margin-right:30px; }
+.fa { font-family: 'FontAwesome' !important; }

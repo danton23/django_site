@@ -42,20 +42,11 @@
 	float:right;
 	height:100%;
 }
-.social{
-	list-style-type: none;
-}
-
-.social li{
-	margin-bottom:300px;
-}
 i {
-    color:blue;
+    color:red;
     content: '\f35a'; /* replace / with \ */
     font-family: "Font Awesome 5 Free"; /* here is the correct font-family */
     font-style: normal;
-    
+    font-weight: 900;
     text-decoration: inherit;
-    margin-right:100px;
 }
-.fa { font-family: 'FontAwesome' !important; margin-right:30px; }

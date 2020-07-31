@@ -1,0 +1,29 @@
+(NOTE - before everything else check that you are using the correct version/files version)
+
+In order to do this you need to follow several steps.
+
+First in the HTML file on which the icons will appear (or on the one which it inherits from) you need to link to the stylesheet
+
+Download the 'all.css' file or the 'fontawesome.min.css' file from their website and link to this as a stylesheet.
+
+(note - It seems that if you link to the fontawesome.css file as stylesheet you DONT need to add the webfont folder - Note)
+
+In order for this to work (if you link to the all.css files or the fontawesome.min.css, however, you need to link to the 
+
+Font files in the path specified in the file under the @font-face property (will probably start with ../) which means first UP
+
+One level - so need to put the webfonts folder (downloadable from FA website) on level UP from where css file is contained 
+
+ANOTHER error which might be shown in DEV tools is that a certain file - typically fa-solid-900.woff 1 and 2 - are missing
+
+If so just download these files and add into the webfonts folder manually (a good source seems to be this one - 
+
+https://www.torproject.org/static/fonts/fontawesome/webfonts/   )
+
+After these steps (either adding just the fontawesome.css or trying one of the other two AND adding the webfonts folder into appropriate place
+
+You should be able to add <i> elements using fa, fas etc classes into html and style them (typical syntax <i class = "fa fa-pencil"
+
+or fas fa-pencil)
+
+(NOTE: in general if you have problem with styling etc try running python manage.py collect static and clearing browser cache)

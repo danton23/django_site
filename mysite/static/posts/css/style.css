@@ -26,6 +26,9 @@ body{
 	width:60%;
 	height:300px;
 }
+#banner img:hover{
+	border:5px solid black;
+}
 p{
 	font-family: Courier Bold, serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
     
